@@ -1,0 +1,12 @@
+{
+	"name": "teepot",
+	"version": "0.0.1",
+	"repository": "https://github.com/0x20h/teepot",
+	"dependencies": {
+		"cron-parser": "0.2.4",
+		"redis": "0.9.1",
+		"commander": "2.1.0",
+		"winston": "0.7.2",
+		"forever": "*"
+	}
+}
