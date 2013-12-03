@@ -8,21 +8,13 @@ module.exports = {
 		command: '/home/kohlhof/dev/private/teeparty-php/bin/teeparty',
 		args: [
 			'teeparty:worker',
-			'/home/kohlhof/dev/private/teeparty-php/config.yml.example',
+			'-c/home/kohlhof/dev/private/teeparty-php/config.yml.example',
+			'-l5'
 		],
-		logs: 'logs/worker.log'
+		logs: 'logs/worker.log',
+		max: 15
 	},
-	channels: {
-		foo: {
-			worker: 3,
-		},
-		bar: {
-			worker: 16,
-		},
-		baz: {
-			worker: 2,
-		}
-	},
+	channels: ['foo', 'bar', 'baz'],
 	observer: {
 		interval: 1000
 	},
