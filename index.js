@@ -10,6 +10,7 @@ prg
 	.option('--port [N]', 'Redis port')
 	.option('--worker [N]', 'number of workers to start')
 	.option('--command [CMD]', 'path to the script that starts workers')
+	.option('-v, --verbosity [LEVEL]', 'error, info, debug', 'info')
 	.parse(process.argv)
 
 
@@ -24,7 +25,7 @@ try {
 winston
 	.remove(winston.transports.Console)
 	.add(winston.transports.Console, { 
-		level: 'debug',
+		level: prg.verbosity || 'info',
 		colorize: true,
 		timestamp: true
 	})
