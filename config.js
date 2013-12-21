@@ -2,21 +2,20 @@ module.exports = {
 	redis: {
 		port: 6379,
 		host: 'localhost',
-		prefix: 'teeparty.'
+		prefix: 'app.'
 	},
 	worker: {
 		command: '/home/kohlhof/dev/private/teeparty-php/bin/teeparty',
 		args: [
 			'teeparty:worker',
-			'-c/home/kohlhof/dev/private/teeparty-php/config.yml.example',
-			'-l5'
+			'-c/home/kohlhof/dev/private/teeparty-php/config.yml.example'
 		],
 		logs: 'logs/worker.log',
-		max: 15
+		max: 2
 	},
 	channels: ['foo', 'bar', 'baz'],
 	observer: {
 		interval: 1000
 	},
-	lambda: 0.8
+	lambda: 0.9
 }
