@@ -8,7 +8,7 @@ module.exports = {
 		command: '/home/kohlhof/dev/private/teeparty-php/bin/teeparty',
 		args: [
 			'teeparty:worker',
-			'-c/home/kohlhof/dev/private/teeparty-php/config.yml.example'
+			'-c/home/kohlhof/dev/private/teeparty-php/teeparty.yml'
 		],
 		logs: 'logs/worker.log',
 		max: 2
