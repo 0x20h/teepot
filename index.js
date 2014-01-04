@@ -1,7 +1,7 @@
 var prg = require('commander'),
 		fs = require('fs'),
 		winston = require('winston'),
-		teepot = require('./lib/teepot')
+		teepot = require('./lib')
 
 prg
 	.version('0.0.1')
@@ -30,4 +30,4 @@ winston
 		timestamp: true
 	})
 
-teepot(config).start()
+teepot.supervisor(config).start()
