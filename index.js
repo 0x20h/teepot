@@ -1,11 +1,13 @@
 var prg = require('commander'),
 		fs = require('fs'),
 		winston = require('winston'),
-		teepot = require('./lib')
+		teepot = require('./lib'),
+		path = require('path')
 
 prg
 	.version('0.0.1')
-	.option('-c, --config [FILE]', 'configuration file', './config.js')
+	.option('-c, --config [FILE]', 'configuration file', 
+			[__dirname, 'config.js'].join('/'))
 	.option('--host [HOST]', 'Redis server')
 	.option('--port [N]', 'Redis port')
 	.option('--worker [N]', 'number of workers to start')
@@ -13,11 +15,11 @@ prg
 	.option('-v, --verbosity [LEVEL]', 'error, info, debug', 'info')
 	.parse(process.argv)
 
-
+var configfile = path.resolve(prg.config)
 try {
-	var config = require(prg.config)
+	var config = require(configfile)
 } catch (e) {
-	console.error("unable to load configuation from " + prg.config)
+	console.error("unable to load configuation from " + configfile)
 	process.exit(1)
 }
 
