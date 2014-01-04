@@ -11,11 +11,16 @@ module.exports = {
 			'-c/home/kohlhof/dev/private/teeparty-php/teeparty.yml'
 		],
 		logs: 'logs/worker.log',
-		max: 2
 	},
-	channels: ['foo', 'bar', 'baz'],
-	observer: {
-		interval: 1000
-	},
-	lambda: 0.9
+	channels: {
+		'foo': {
+			max: 3
+		},
+		'bar': {
+			max: 1
+		},
+		'baz': {
+			max: 0
+		}
+	}
 }
