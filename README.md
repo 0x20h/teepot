@@ -14,6 +14,8 @@ forever start teepot -c teepot-config.js
 
 ## Events
 
+### Supervisor
+
 * worker.start [child]: triggered when a worker is started. The channel is
   accessibable via child.channel.
 
@@ -29,7 +31,7 @@ forever start teepot -c teepot-config.js
 * `GET /channel/:channel`: list current worker pids and tasks 
                            on the given channel
 
-* `GET /worker/:pid`: Show status of the given worker
+* `GET /worker/:id`: Show status of the given worker
 * `POST /worker/start`: Start a worker to the given channel
 * `POST /worker/stop`: Stop the worker with the given pid
 
