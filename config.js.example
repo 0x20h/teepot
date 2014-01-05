@@ -22,5 +22,8 @@ module.exports = {
 		'baz': {
 			max: 0
 		}
+	},
+	api: {
+		port: 3000
 	}
 }

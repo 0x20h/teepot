@@ -1,6 +1,6 @@
 var prg = require('commander'),
 		fs = require('fs'),
-		winston = require('winston'),
+		log = require('winston'),
 		teepot = require('./lib'),
 		path = require('path')
 
@@ -24,12 +24,18 @@ try {
 }
 
 // log config
-winston
-	.remove(winston.transports.Console)
-	.add(winston.transports.Console, { 
+log
+	.remove(log.transports.Console)
+	.add(log.transports.Console, { 
 		level: prg.verbosity || 'info',
 		colorize: true,
 		timestamp: true
 	})
 
-teepot.supervisor(config).start()
+var supervisor = teepot.supervisor(config)
+// set reference to supervisor
+teepot.api.set('supervisor', supervisor)
+
+supervisor.start()
+teepot.api.listen(config.api.port)
+log.info('started')
