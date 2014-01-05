@@ -36,7 +36,5 @@ var	teepot = require('./lib')
 var supervisor = teepot.supervisor(config)
 // set reference to supervisor
 teepot.api.set('supervisor', supervisor)
-
 supervisor.start()
 teepot.api.listen(config.api.port)
-log.info('started')
