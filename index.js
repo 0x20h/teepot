@@ -36,6 +36,8 @@ var	teepot = require('./lib')
 var supervisor = teepot.supervisor(config)
 // set reference to supervisor
 teepot.api.set('supervisor', supervisor)
-teepot.api.set('options', config)
+teepot.api.set('config', config)
+teepot.api.set('base_dir', __dirname)
+
 supervisor.start()
 teepot.api.listen(config.api.port)
