@@ -5,10 +5,10 @@ module.exports = {
     prefix: 'app.'
   },
   worker: {
-    command: '/home/kohlhof/dev/private/teeparty-php/bin/teeparty',
+    command: '/path/to/teeparty-php/bin/teeparty',
     args: [
       'teeparty:worker',
-      '-c/home/kohlhof/dev/private/teeparty-php/teeparty.yml'
+      '-c/path/to/teeparty-php/teeparty.yml'
     ],
     logs: 'logs/worker.log',
   },
