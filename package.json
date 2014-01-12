@@ -1,14 +1,14 @@
 {
-	"private": true,
-	"name": "teepot",
-	"version": "0.0.1",
-	"repository": "https://github.com/0x20h/teepot.git",
-	"dependencies": {
-		"cron-parser": "~0.2",
-		"redis": "~0.9",
-		"commander": "~2.1",
-		"winston": "~0.7",
-		"express": "~3.4",
-		"teeparty-core": "git+ssh://git@github.com:0x20h/teeparty-core.git#master"
-	}
+  "private": true,
+  "name": "teepot",
+  "version": "0.0.1",
+  "repository": "https://github.com/0x20h/teepot.git",
+  "dependencies": {
+    "cron-parser": "~0.2",
+    "redis": "~0.9",
+    "commander": "~2.1",
+    "winston": "~0.7",
+    "express": "~3.4",
+    "teeparty-core": "git+ssh://git@github.com:0x20h/teeparty-core.git#master"
+  }
 }
